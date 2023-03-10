@@ -8,7 +8,9 @@
   border-top: 1px solid grey;
   padding-top: 10px;
   color: blue;
+  cursor: pointer;
 }
+
 
 .accordion:hover .accordion__item-title {
   color: black;
@@ -19,20 +21,29 @@
   display: block;
 }
 
+
 .accordion__item-input {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  
 }
 
 .accordion__item-title {
   display: block;
+  cursor: pointer;
 }
 
 .accordion__item-content {
   display: none;
   padding-top: 10px;
+  width: 50%;
+}
+
+.accordion__item-content img {
+  width: 100%;
+  height: auto;
 }
 
 
@@ -40,7 +51,8 @@
   color: black;
 }
 
-.accordion__item-input:checked ~ .accordion__item-content {
+.accordion__item-input:checked  ~ .accordion__item-content {
   display: block;
 }
+
 
