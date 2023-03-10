@@ -1,57 +1,73 @@
-.wrapper {
+.accordion {
   max-width: 600px;
   margin: 0 auto;
+  font-family: Helvetica, sans-serif;
 }
 
 .accordion__item {
-  margin-bottom: 20px;
   border-top: 1px solid grey;
-  padding-top: 10px;
   color: blue;
   cursor: pointer;
 }
 
-
-.accordion:hover .accordion__item-title {
-  color: black;
-}
-
-.accordion__item:hover .accordion__item-content {
-  color: black;
-  display: block;
-}
-
-
-.accordion__item-input {
+.accordion__input {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+  appearance: none;
+}
+
+.accordion__row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.accordion__title {
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion__icon-plus,
+.accordion__icon-xmark {
+  display: none;
+  width: 3%;
+}
+.accordion__content {
+  display: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.accordion__content img {
+  width: 100%;
+  height: auto;
   
 }
 
-.accordion__item-title {
-  display: block;
-  cursor: pointer;
-}
-
-.accordion__item-content {
-  display: none;
-  padding-top: 10px;
-  width: 50%;
-}
-
-.accordion__item-content img {
-  width: 100%;
-  height: auto;
-}
-
-
-.accordion__item-input:checked ~ .accordion__item-title {
+.accordion:hover .accordion__title {
   color: black;
 }
 
-.accordion__item-input:checked  ~ .accordion__item-content {
+.accordion__item:hover .accordion__content {
+  display: block;
+}
+
+.accordion:hover .accordion__icon-plus {
+  display: block;
+  
+}
+
+
+.accordion__input:checked ~ .accordion__title {
+  color: black;
+}
+
+.accordion__input:checked  + .accordion__title .accordion__icon-plus {
+  transform: rotate(45deg);
+}
+
+.accordion__input:checked + .accordion__title .accordion__content {
   display: block;
 }
 
