@@ -7,6 +7,11 @@
   margin-bottom: 20px;
   border-top: 1px solid grey;
   padding-top: 10px;
+  color: blue;
+}
+
+.accordion:hover .accordion__item-title {
+  color: black;
 }
 
 .accordion__item-input {
@@ -25,10 +30,12 @@
   padding-top: 10px;
 }
 
-.accordion__item-input:checked ~ .accordion__item-title {
 
+.accordion__item-input:checked ~ .accordion__item-title {
+  color: black;
 }
 
 .accordion__item-input:checked ~ .accordion__item-content {
   display: block;
 }
+
