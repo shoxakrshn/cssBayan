@@ -18,44 +18,76 @@
 .accordion__row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
+
 .accordion__title {
   display: block;
   cursor: pointer;
   font-weight: bold;
 }
 
-.accordion__icon-plus,
-.accordion__icon-xmark {
-  display: none;
-  width: 3%;
-}
-.accordion__content {
-  display: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 50%;
-  margin: 0 auto;
-}
+
 
 .accordion__content img {
   width: 100%;
   height: auto;
-  
 }
 
 .accordion:hover .accordion__title {
   color: black;
 }
 
+/*mem animation*/
+.accordion__content {
+  width: 50%;
+  height: 0;
+  margin: 0 auto;
+
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s linear, opacity 0.2s 0.5s linear;
+}
+
 .accordion__item:hover .accordion__content {
-  display: block;
+  height: auto;
+  padding: 10px 0;
+  opacity: 1;
+  transition: height 0.3s linear, opacity 0.3s 0.2s linear;
+  overflow: visible;
+
+}
+
+.accordion__input:checked + .accordion__title .accordion__content {
+  height: auto;
+  padding: 10px 0;
+  opacity: 1;
+  overflow: visible;
+
+}
+
+
+/* icon animation*/
+.accordion__icon-plus {
+  height: 0;
+  width: 3%;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s linear, opacity 0.2s 0.5s linear;
 }
 
 .accordion:hover .accordion__icon-plus {
-  display: block;
-  
+  height: auto;
+  opacity: 1;
+  transition: height 0.3s linear, opacity 0.3s 0.2s linear;
+  overflow: visible;
+}
+
+.accordion__item:hover .accordion__icon-plus {
+  height: auto;
+  opacity: 1;
+  transition: all 0.3s linear, opacity 0.3s 0.2s linear;
+  overflow: visible;
+  transform: rotate(45deg);
 }
 
 
@@ -65,10 +97,6 @@
 
 .accordion__input:checked  + .accordion__title .accordion__icon-plus {
   transform: rotate(45deg);
-}
-
-.accordion__input:checked + .accordion__title .accordion__content {
-  display: block;
 }
 
 
